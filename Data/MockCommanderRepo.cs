@@ -19,10 +19,10 @@ namespace Bandwagon.Data
         public Command GetCommandById(int id)
         {
             Command Command = new Command();
-            Command.Id=123;
-            Command.HowTo="Boil an Egg.";
-            Command.Line="Boil Water.";
-            Command.Platform="Kettle&Pan";
+            Command.Id=3;
+            Command.HowTo="Leave your keys";
+            Command.Line="At the nail on the wall";
+            Command.Platform="Buy a cup of coffee";
             return Command;
         }
     }
