@@ -1,0 +1,2 @@
+Use this for install EntityFramework correctly --> dotnet tool install --global dotnet-ef
+Use this for initiate database (entity framework) settings --> dotnet ef migrations add InitialMigration
