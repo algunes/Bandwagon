@@ -1,2 +1,18 @@
 Use this for install EntityFramework correctly --> dotnet tool install --global dotnet-ef
 Use this for initiate database (entity framework) settings --> dotnet ef migrations add InitialMigration
+ --> dotnet ef database update
+
+SQLs
+
+CREATE LOGIN BandwagonAPI2   
+    WITH PASSWORD = 'Test2022';  
+GO  
+-- Creates a database user for the login created above.  
+CREATE USER BandwagonAPI2 FOR LOGIN BandwagonAPI2;  
+GO  
+ALTER LOGIN sa ENABLE ;  
+GO  
+ALTER LOGIN sa WITH PASSWORD = 'Test2022' ;  
+GO  
+
+DROP USER BandwagonAPI2;
