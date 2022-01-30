@@ -11,6 +11,8 @@ namespace Bandwagon.Profiles
             //Source --> Target
             CreateMap<Command, CommandReadDTO>();
             CreateMap<CommandCreateDTO, Command>();
+            CreateMap<CommandUpdateDTO, Command>();
+            CreateMap<Command, CommandUpdateDTO>();
         }
 
     }

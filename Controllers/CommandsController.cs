@@ -4,6 +4,7 @@ using Bandwagon.Models;
 using Bandwagon.Data;
 using AutoMapper;
 using Bandwagon.DTOs;
+using Microsoft.AspNetCore.JsonPatch;
 
 namespace Bandwagon.Controllers 
 {
@@ -73,6 +74,70 @@ namespace Bandwagon.Controllers
                 return NotFound();
             }
         }
+
+        //PUT api/Commands/{id}
+        [HttpPut("{id}")]
+        public ActionResult<CommandUpdateDTO> UpdateCommand(int id, CommandUpdateDTO commandUpdateDTO)
+        {
+            var commandModelFromRepo = _repository.GetCommandById(id);
+            if(commandModelFromRepo == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                _mapper.Map(commandUpdateDTO, commandModelFromRepo);
+                _repository.UpdateCommand(commandModelFromRepo);
+                _repository.SaveChanges();
+
+                return Ok();
+            } 
+        }
+
+        //PATCH api/Commands/{id}
+        [HttpPatch("{id}")]
+        public ActionResult PartialCommandUpdate(int id, JsonPatchDocument<CommandUpdateDTO> patchDoc)
+        {
+            var commandModelFromRepo = _repository.GetCommandById(id);
+            if(commandModelFromRepo == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                var commandToPatch = _mapper.Map<CommandUpdateDTO>(commandModelFromRepo);
+                patchDoc.ApplyTo(commandToPatch, ModelState);
+
+                if(!TryValidateModel(commandToPatch))
+                {
+                    return ValidationProblem(ModelState);
+                }
+                else
+                {
+                    _mapper.Map(commandToPatch, commandModelFromRepo);
+                    _repository.SaveChanges();
+                    return Ok();
+                }
+            }
+        }
+
+        //DELETE api/Commands/{id}
+        [HttpDelete("{id}")]
+        public ActionResult DeleteCommand(int id)
+        {
+            var commandModelFromRepo = _repository.GetCommandById(id);
+            if(commandModelFromRepo == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                _repository.DeleteCommand(commandModelFromRepo);
+                _repository.SaveChanges();
+                return Ok();
+            }
+        }
+
 
     }
 }

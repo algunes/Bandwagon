@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Bandwagon.DTOs
 {
-    public class CommandCreateDTO
+    public class CommandUpdateDTO
     {
         [Required]
         public string HowTo { get; set; }

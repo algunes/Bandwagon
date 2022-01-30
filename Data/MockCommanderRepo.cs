@@ -10,6 +10,11 @@ namespace Bandwagon.Data
             throw new System.NotImplementedException();
         }
 
+        public void DeleteCommand(Command cmd)
+        {
+            throw new System.NotImplementedException();
+        }
+
         public IEnumerable<Command> GetAllCommands()
         {
             var commands = new List<Command> 
@@ -32,6 +37,11 @@ namespace Bandwagon.Data
         }
 
         public bool SaveChanges()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void UpdateCommand(Command cmd)
         {
             throw new System.NotImplementedException();
         }
