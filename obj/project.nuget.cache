@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "TWx7c48VqB2Nb9PBbQvhWNgO2Zob2IASUGYHmRB1SIUaM3Aenb9Lh+5fogSWl8tVvxhezDx0QzxSgwuc6z4zVQ==",
+  "dgSpecHash": "H0ndfeJJ8NIpusNa2tLdm3A9ylD8zYzTniH0c6dNUXJ3jmRP46iRmIJXrDhAZroppvSUSISdN3k7axPqWU6tTw==",
   "success": true,
   "projectFilePath": "C:\\Users\\aliya\\Bandwagon\\Bandwagon.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\aliya\\.nuget\\packages\\automapper\\9.0.0\\automapper.9.0.0.nupkg.sha512",
+    "C:\\Users\\aliya\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\7.0.0\\automapper.extensions.microsoft.dependencyinjection.7.0.0.nupkg.sha512",
     "C:\\Users\\aliya\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.0\\microsoft.bcl.asyncinterfaces.1.1.0.nupkg.sha512",
     "C:\\Users\\aliya\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
     "C:\\Users\\aliya\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

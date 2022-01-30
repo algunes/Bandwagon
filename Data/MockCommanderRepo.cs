@@ -5,6 +5,11 @@ namespace Bandwagon.Data
 {
     public class MockCommanderRepo : ICommanderRepo
     {
+        public void CreateCommand(Command cmd)
+        {
+            throw new System.NotImplementedException();
+        }
+
         public IEnumerable<Command> GetAllCommands()
         {
             var commands = new List<Command> 
@@ -24,6 +29,11 @@ namespace Bandwagon.Data
             Command.Line="At the nail on the wall";
             Command.Platform="Buy a cup of coffee";
             return Command;
+        }
+
+        public bool SaveChanges()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
